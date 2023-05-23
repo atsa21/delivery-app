@@ -1,0 +1,20 @@
+.prod-card {
+    display: flex;
+    flex-direction: column;
+
+    .image-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 180px;
+        height: 180px;
+        background: url('/assets/img/wood-bg.png');
+        background-size: contain;
+
+        .image {
+            width: 150px;
+            height: 150px;
+            filter: drop-shadow(3px 5px 10px rgba(46, 46, 46, 0.5));
+        }
+    }
+}

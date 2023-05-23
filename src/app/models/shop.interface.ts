@@ -1,8 +1,9 @@
 import { Product } from "./product.interface";
 
 export interface Shop {
-    id?: string,
+    id: string,
     name: string,
-    category: string,
-    product: Product[]
+    image: string,
+    products?: Product[],
+    selected?: boolean
 }

@@ -1,0 +1,99 @@
+:root {
+    --black: rgb(31, 31, 31);
+    --dark-grey: rgb(58, 58, 58);
+    --grey: #979797;
+    --ternary-grey: #c9c9c9;
+    --med-grey: #e2e2e2;
+    --light-grey: #EEEEEE;
+    --white: rgb(255, 255, 255);
+    --accent: #7B2D2D;
+    --danger: #FF7474;
+    --danger-hover: #f05e5e;
+    --success: #35BF30;
+}
+
+// Scrollbar style
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+   
+::-webkit-scrollbar-track {
+    background-color: var(--light-grey);
+}
+   
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 3px solid transparent;
+    background-color: var(--grey);
+    background-clip: content-box;
+}
+
+// Buttons style
+
+.btn {
+    height: 44px;
+    padding: 0 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 6px;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-s {
+    height: 36px;
+    padding: 0 16px;
+    font-size: 14px;
+}
+
+.btn-white {
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.btn-accent {
+    color: var(--white);
+    background-color: var(--black);
+
+    &:hover:enabled {
+        background-color: var(--dark-grey);
+    }
+
+    &:disabled {
+        color: var(--white);
+        background-color: var(--med-grey);
+    }
+}
+
+// Inputs style
+
+.input {
+    height: 44px;
+    padding: 16px;
+    border-radius: 6px;
+    outline: none;
+    border: 0;
+}
+
+.input-accent-lined {
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    border: 2px solid var(--grey);
+    font-size: 14px;
+
+    &::placeholder {
+        color: var(--ternary-grey);
+    }
+
+    &:focus:active {
+        border: 2px solid var(--black);
+    }
+
+    &:focus-within {
+        border: 2px solid var(--black);
+    }
+}

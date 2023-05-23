@@ -1,7 +1,12 @@
 <div class="container">
-    <app-shop-filter></app-shop-filter>
+    <app-shop-filter (shopSelected)="getProducts($event)"></app-shop-filter>
     <div class="shop-container">
-
+        <div *ngIf="products && products.length">
+            <div *ngFor="let product of products">
+                <h3 class="category">{{  product.category }}</h3>
+                <app-product-card *ngFor="let item of product.items" [product]="item"></app-product-card>
+            </div>
+        </div>
     </div>
 </div>
 

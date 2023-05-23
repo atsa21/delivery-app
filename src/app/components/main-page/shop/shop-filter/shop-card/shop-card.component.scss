@@ -1,0 +1,41 @@
+.shop-item {
+    display: flex;
+    position: relative;
+    width: 240px;
+    height: 109px;
+    border: 0;
+    border-radius: 6px;
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 2px 4px 10px rgba($color: #1b1b1b, $alpha: .3);
+    }
+
+    &:hover .image {
+        filter: contrast(100%);
+    }
+
+    .name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+        color: var(--white);
+        z-index: 99;
+    }
+
+    .image {
+        position: absolute;
+        filter: contrast(60%);
+        width: 240px;
+        border-radius: 6px;
+        transition: all .3s;
+    }
+
+    .selected {
+        filter: contrast(100%);
+    }
+}

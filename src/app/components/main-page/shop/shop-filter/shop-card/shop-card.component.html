@@ -1,0 +1,4 @@
+<button class="shop-item" (click)="selectShop()">
+    <p class="name">{{ shop.name }}</p>
+    <img class="image" [ngClass]="{ selected : shop.selected }" [src]="shop.image"/>
+</button>

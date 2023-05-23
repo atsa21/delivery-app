@@ -1,1 +1,7 @@
-<p>product-card works!</p>
+<div class="prod-card">
+    <div class="image-box">
+        <img [src]="product.image" [alt]="product.name" class="image"/>
+    </div>
+    <p>{{ product.name }}</p>
+    <button class="btn btn-white">Add</button>
+</div>
