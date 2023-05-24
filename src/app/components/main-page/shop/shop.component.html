@@ -3,8 +3,10 @@
     <div class="shop-container">
         <div *ngIf="products && products.length">
             <div *ngFor="let product of products">
-                <h3 class="category">{{  product.category }}</h3>
-                <app-product-card *ngFor="let item of product.items" [product]="item"></app-product-card>
+                <h2 class="category">{{  product.category }}</h2>
+                <div class="product-list">
+                    <app-product-card *ngFor="let item of product.items" [product]="item"></app-product-card>
+                </div>
             </div>
         </div>
     </div>

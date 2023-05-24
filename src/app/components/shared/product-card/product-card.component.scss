@@ -1,20 +1,48 @@
 .prod-card {
     display: flex;
     flex-direction: column;
+    width: 240px;
 
     .image-box {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 180px;
-        height: 180px;
+        position: relative;
+        width: 240px;
+        height: 240px;
         background: url('/assets/img/wood-bg.png');
         background-size: contain;
 
+        .prod-info {
+            position: absolute;
+            top: 0;
+            width: 240px;
+            z-index: 2;
+
+            p {
+                padding: 12px;
+                color: var(--white);
+                text-align: end;
+            }
+        }
+
         .image {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             filter: drop-shadow(3px 5px 10px rgba(46, 46, 46, 0.5));
+        }
+    }
+
+    .prod-text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px;
+        background-color: var(--accent);
+
+        h3,
+        p {
+            color: var(--white);
         }
     }
 }

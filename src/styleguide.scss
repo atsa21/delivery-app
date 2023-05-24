@@ -6,7 +6,9 @@
     --med-grey: #e2e2e2;
     --light-grey: #EEEEEE;
     --white: rgb(255, 255, 255);
+    --beige: #F2E6D8;
     --accent: #7B2D2D;
+    --secondary: #D99C52;
     --danger: #FF7474;
     --danger-hover: #f05e5e;
     --success: #35BF30;
@@ -38,8 +40,7 @@
     font-weight: 600;
     text-transform: uppercase;
     border: 0;
-    border-radius: 6px;
-    transition: all 0.4s ease-in-out;
+    transition: all .4s ease-in-out;
     cursor: pointer;
 }
 
@@ -52,6 +53,11 @@
 .btn-white {
     color: var(--black);
     background-color: var(--white);
+
+    &:hover:enabled {
+        color: var(--white);
+        background-color: var(--black);
+    }
 }
 
 .btn-accent {

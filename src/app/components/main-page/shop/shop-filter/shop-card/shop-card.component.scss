@@ -4,16 +4,12 @@
     width: 240px;
     height: 109px;
     border: 0;
-    border-radius: 6px;
     transition: all .3s;
     cursor: pointer;
 
-    &:hover {
-        box-shadow: 2px 4px 10px rgba($color: #1b1b1b, $alpha: .3);
-    }
-
-    &:hover .image {
-        filter: contrast(100%);
+    &:hover:enabled .name {
+        background-color: rgba($color: #363636, $alpha: .5);
+        border-right: 2px solid var(--white);
     }
 
     .name {
@@ -24,18 +20,18 @@
         height: 100%;
         font-size: 24px;
         color: var(--white);
+        border-right: 2px solid rgba($color: #000000, $alpha: 0);
         z-index: 99;
+        transition: all .3s;
     }
 
     .image {
         position: absolute;
         filter: contrast(60%);
         width: 240px;
-        border-radius: 6px;
-        transition: all .3s;
     }
 
     .selected {
-        filter: contrast(100%);
+        background-color: rgba($color: #bd0000, $alpha: .5);
     }
 }

@@ -1,5 +1,5 @@
-<div class="navigation">
-    <a *ngFor="let nav of navList" [href]="nav.link">
+<nav class="navigation">
+    <a class="nav-item" *ngFor="let nav of navList" [href]="nav.link">
         {{ nav.name }}
     </a>
-</div>
+</nav>

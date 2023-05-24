@@ -2,8 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    height: calc(100vh - 70px);
     width: 280px;
+    gap: 12px;
+    padding-top: 24px;
+    background-color: var(--secondary);
+
+    h2 {
+        width: 100%;
+        padding-left: 18px;
+        text-align: left;
+    }
 
     .shop-list {
         display: flex;

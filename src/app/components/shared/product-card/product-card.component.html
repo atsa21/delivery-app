@@ -1,7 +1,13 @@
 <div class="prod-card">
     <div class="image-box">
+        <div class="prod-info">
+            <p>{{ product.gram }} g</p>
+        </div>
         <img [src]="product.image" [alt]="product.name" class="image"/>
     </div>
-    <p>{{ product.name }}</p>
-    <button class="btn btn-white">Add</button>
+    <div class="prod-text">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.price }} ₴</p>
+        <button class="btn btn-white s-btn">Add to cart</button>
+    </div>
 </div>

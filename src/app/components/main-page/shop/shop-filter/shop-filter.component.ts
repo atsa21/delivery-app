@@ -33,6 +33,7 @@ export class ShopFilterComponent implements OnInit {
   }
 
   setShopId(shopId: string): void {
+    this.shops.forEach((shop: Shop) => shop.selected = shop.id === shopId ? true : false);
     this.shopSelected.emit(shopId);
   }
 

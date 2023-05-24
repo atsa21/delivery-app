@@ -1,4 +1,4 @@
-<button class="shop-item" (click)="selectShop()">
-    <p class="name">{{ shop.name }}</p>
-    <img class="image" [ngClass]="{ selected : shop.selected }" [src]="shop.image"/>
+<button class="shop-item" (click)="selectShop()" [disabled]="shop.selected">
+    <p class="name" [ngClass]="{ selected : shop.selected }">{{ shop.name }}</p>
+    <img class="image" [src]="shop.image"/>
 </button>
