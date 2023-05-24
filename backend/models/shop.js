@@ -5,7 +5,7 @@ const itemsSchema = mongoose.Schema({
     image: { type: String, required: true },
     price: { type: Number, required: true },
     gram: { type: Number, required: true },
-    ingredience: { type: String, required: true },
+    ingredience: [{ type: String, required: true }],
 });
 
 const productsSchema = mongoose.Schema({

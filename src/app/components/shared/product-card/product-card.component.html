@@ -1,6 +1,7 @@
 <div class="prod-card" [ngClass]="{ 'card-order' : isOrder }">
     <div class="image-box" [ngClass]="{ 'image-order' : isOrder }">
-        <div *ngIf="product.gram" class="prod-info">
+        <div *ngIf="product.gram && product.ingredience" class="prod-info">
+            <button class="info-btn" (click)="isInfoShowed = !isInfoShowed">info</button>
             <p>{{ product.gram }} g</p>
         </div>
         <img [src]="product.image" [alt]="product.name" class="image"/>

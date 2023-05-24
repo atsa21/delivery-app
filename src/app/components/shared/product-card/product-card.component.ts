@@ -15,6 +15,8 @@ export class ProductCardComponent implements OnInit {
   @Input() isOrder = false;
   @Input() cleanEvent!: Observable<void>;
 
+  isInfoShowed = false;
+
   @Output() isItemsAdded = new EventEmitter<boolean>();
   private cleanSubscription!: Subscription;
   private destroy$: Subject<boolean> = new Subject<boolean>();
@@ -26,7 +28,7 @@ export class ProductCardComponent implements OnInit {
   private order: any;
 
   ngOnInit(): void {
-
+    console.log(this.product);
     this.prodAmount = new FormControl(0, [Validators.min(1), Validators.max(20)]);
     this.getOrder();
     if(!this.isOrder) {
