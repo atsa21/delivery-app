@@ -63,6 +63,8 @@ export class ShoppingCartComponent implements OnInit {
         totalPrice: this.totalPrice
       };
       this.orderService.addOrder(orderData).pipe(take(1)).subscribe(() => {
+        localStorage.clear();
+        this.goToShop();
       });
     }
   }
