@@ -2,7 +2,7 @@
     display: flex;
     position: relative;
     width: 240px;
-    height: 109px;
+    height: 70px;
     border: 0;
     transition: all .3s;
     cursor: pointer;
@@ -22,16 +22,22 @@
         color: var(--white);
         border-right: 2px solid rgba($color: #000000, $alpha: 0);
         z-index: 99;
-        transition: all .3s;
+        transition: all .3s ease-in-out;
     }
 
     .image {
         position: absolute;
+        object-fit: cover;
         filter: contrast(60%);
+        height: 100%;
         width: 240px;
     }
 
     .selected {
         background-color: rgba($color: #bd0000, $alpha: .5);
     }
+}
+
+.selected-box {
+    height: 109px;
 }
