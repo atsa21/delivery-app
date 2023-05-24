@@ -5,7 +5,7 @@
     </div>
     <div class="submit-box">
         <h3>Total price: {{ totalPrice }} ₴</h3>
-        <button class="btn btn-accent" [disabled]="!personalInfo || !isValidForm" (click)="addOrder()">Submit</button>
+        <button class="btn btn-accent" [disabled]="!personalInfo || !isFormValid" (click)="addOrder()">Submit</button>
     </div>
 </div>
 <ng-template #noItems>

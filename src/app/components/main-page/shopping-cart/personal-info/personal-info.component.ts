@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { Patterns, Masks } from 'src/app/patterns/patterns';
 
 @Component({
   selector: 'app-personal-info',
@@ -9,6 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from
 export class PersonalInfoComponent implements OnInit {
 
   orderForm!: FormGroup;
+  phoneMask = Masks.phoneMask;
 
   @Output() orderEmitter = new EventEmitter<any>();
 
@@ -20,9 +22,9 @@ export class PersonalInfoComponent implements OnInit {
 
   initForm(): void {
     this.orderForm = this.fb.group({
-      name: new FormControl('', Validators.required),
+      name: new FormControl('', [Validators.required, Validators.maxLength(70)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      phone: new FormControl(null, Validators.required),
+      phone: new FormControl('', [Validators.required, Validators.pattern(Patterns.phoneNumber)]),
       address: new FormControl('', Validators.required)
     });
     this.orderForm.statusChanges.subscribe(() => {

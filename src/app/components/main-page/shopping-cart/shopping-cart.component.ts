@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductItem } from 'src/app/models/product.interface';
+import { User } from 'src/app/models/user.interface';
+import { OrderService } from 'src/app/services/order-servise/order.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -14,9 +17,9 @@ export class ShoppingCartComponent implements OnInit {
   totalPrice = 0;
   personalInfo: any;
 
-  isValidForm = false;
+  isFormValid = false;
 
-  constructor( private router: Router) {}
+  constructor( private router: Router, private orderService: OrderService) {}
 
   ngOnInit(): void {
     this.getOrder();
@@ -47,12 +50,19 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   setOrderValue(info: any): void {
-    console.log(info);
     this.personalInfo = info;
-    this.isValidForm = this.personalInfo.valid;
+    this.isFormValid = this.personalInfo.valid;
   }
 
   addOrder(): void {
-
+    if(this.isFormValid) {
+      const user: User = this.personalInfo.value;
+      const orderData = {
+        client: user,
+        order: this.order
+      };
+      this.orderService.addOrder(orderData).pipe(take(1)).subscribe(() => {
+      });
+    }
   }
 }

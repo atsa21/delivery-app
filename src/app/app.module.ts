@@ -12,6 +12,7 @@ import { ShopFilterComponent } from './components/main-page/shop/shop-filter/sho
 import { ShopCardComponent } from './components/main-page/shop/shop-filter/shop-card/shop-card.component';
 import { PersonalInfoComponent } from './components/main-page/shopping-cart/personal-info/personal-info.component';
 import { CartComponent } from './components/main-page/shopping-cart/cart/cart.component';
+import { IMaskModule } from 'angular-imask';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CartComponent } from './components/main-page/shopping-cart/cart/cart.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    IMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

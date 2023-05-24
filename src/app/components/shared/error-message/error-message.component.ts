@@ -16,9 +16,8 @@ export class ErrorMessageComponent implements OnInit {
     required: 'This field is required',
     minlength: 'The field must contain more characters',
     maxlength: 'The field must contain fewer characters',
-    minlengthPassword: 'Password must contain at least 6 characters',
-    maxlengthPassword: 'Password must contain fewer that 256 characters',
-    pattern: 'Wrong pattern',
+    maxlengthName: 'Name must contain fewer that 70 characters',
+    pattern: 'Phone number be in +380 format',
     email: 'Please enter a correct email format'
   };
 
@@ -36,10 +35,13 @@ export class ErrorMessageComponent implements OnInit {
       if (this.validator?.errors?.[err]) {
         switch (err) {
           case errorType.minlength:
-            this.errorMessage = this.getMinlength(this.validator.errors?.['minlength'].requiredLength);
+            this.errorMessage = this.validatorErrors.minlength;
             break;
           case errorType.maxlength:
             this.errorMessage = this.getMaxlength(this.validator.errors?.['maxlength'].requiredLength);
+            break;
+          case errorType.email:
+            this.errorMessage = this.validatorErrors.email;
             break;
           default:
             this.errorMessage = this.validatorErrors[err];
@@ -48,11 +50,7 @@ export class ErrorMessageComponent implements OnInit {
     });
   }
 
-  getMinlength(minlength: number): string {
-    return minlength === 6 ? this.validatorErrors.minlengthPassword : this.validatorErrors.minlength;
-  }
-
   getMaxlength(maxlength: number): string {
-    return maxlength === 256 ? this.validatorErrors.maxlengthPassword : this.validatorErrors.maxlength;
+    return maxlength === 70 ? this.validatorErrors.maxlengthName : this.validatorErrors.maxlength;
   }
 }
