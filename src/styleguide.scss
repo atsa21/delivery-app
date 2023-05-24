@@ -9,8 +9,7 @@
     --beige: #F2E6D8;
     --accent: #7B2D2D;
     --secondary: #D99C52;
-    --danger: #FF7474;
-    --danger-hover: #f05e5e;
+    --danger: #ff3535;
     --success: #35BF30;
 }
 
@@ -102,4 +101,10 @@
     &:focus-within {
         border: 2px solid var(--black);
     }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

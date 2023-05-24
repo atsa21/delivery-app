@@ -2,12 +2,12 @@
     display: flex;
     width: 100%;
     height: calc(100vh - 70px);
-    background-color: var(--beige);
+    background-color: var(--light-grey);
 
     .shop-container {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 18px;
         width: calc(100% - 280px);
         padding: 32px 48px;
         overflow-y: scroll;
@@ -19,7 +19,7 @@
         .shop-prod-box {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 32px;
 
             .shop-category {
                 display: flex;
@@ -28,6 +28,7 @@
                                 
                 .category {
                     font-size: 24px;
+                    text-transform: uppercase;
                     color: var(--accent);
                 }
 
