@@ -10,6 +10,9 @@
                 </div>
             </div>
         </div>
-        <button *ngIf="isItemAdded" class="btn btn-accent btn-nav" (click)="goToCart()">To cart</button>
+        <button *ngIf="isItemAdded" class="btn btn-nav" (click)="goToCart()">
+            <img src="/assets/img/cart-icon.svg" class="cart-icon" alt="Cart icon"/>
+            <img src="/assets/img/cart.svg" class="cart-text" alt="Cart text"/>
+        </button>
     </div>
 </div>

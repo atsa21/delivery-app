@@ -42,7 +42,38 @@
 }
 
 .btn-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
+    font-size: 14px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
     bottom: 32px;
     right: 32px;
+    cursor: pointer;
+
+    &:hover .cart-text, 
+    &:hover .cart-icon {
+        filter: grayscale(10) contrast(200%);
+    }
+
+    .cart-icon {
+        width: 24px;
+    }
+
+    .cart-text {
+        position: absolute;
+        animation: rotate 5s infinite linear;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

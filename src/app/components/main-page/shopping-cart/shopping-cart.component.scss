@@ -37,6 +37,11 @@
 
 .container-no-items {
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 24px;
     gap: 12px;
+
+    .image {
+        height: 50vh;
+    }
 }
