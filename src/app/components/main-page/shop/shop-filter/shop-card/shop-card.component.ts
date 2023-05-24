@@ -6,9 +6,10 @@ import { Shop } from 'src/app/models/shop.interface';
   templateUrl: './shop-card.component.html',
   styleUrls: ['./shop-card.component.scss']
 })
-export class ShopCardComponent {
+export class ShopCardComponent  {
 
   @Input() shop!: Shop;
+  @Input() isItemAdded = false;
 
   @Output() shopSelected = new EventEmitter<string>();
 

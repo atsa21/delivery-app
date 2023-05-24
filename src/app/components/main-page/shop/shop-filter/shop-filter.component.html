@@ -1,6 +1,6 @@
 <div class="container">
     <h2>Shops</h2>
     <div class="shop-list">
-        <app-shop-card *ngFor="let shop of shops" [shop]="shop" (shopSelected)="setShopId($event)"></app-shop-card>
+        <app-shop-card *ngFor="let shop of shops" [shop]="shop" [isItemAdded]="isItemAdded" (shopSelected)="setShopId($event)"></app-shop-card>
     </div>
 </div>

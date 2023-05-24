@@ -5,10 +5,11 @@ export interface Product {
 }
 
 export interface ProductItem {
-    id: string,
+    id?: string,
     name: string,
     image: string,
     price: number,
-    gram: number,
-    ingredience: string[]
+    amount?: number;
+    gram?: number,
+    ingredience?: string[]
 }

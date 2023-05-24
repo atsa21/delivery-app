@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ShopService } from 'src/app/services/shop-service/shop.service';
 import { take } from 'rxjs';
 import { Product } from 'src/app/models/product.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -12,8 +13,9 @@ export class ShopComponent {
 
   products!: Product[];
   shopName = '';
+  isItemAdded = false;
 
-  constructor( private shopService: ShopService) {}
+  constructor( private shopService: ShopService, private router: Router) {}
 
   getProducts(shopId: string): void {
     this.shopService.getShopById(shopId).pipe(take(1)).subscribe((res: any) => {
@@ -32,5 +34,13 @@ export class ShopComponent {
       this.shopName = res.data.name;
       this.products = res.data.products;
     })
+  }
+
+  setItemAdded(isAdded: boolean): void {
+    this.isItemAdded = isAdded;
+  }
+
+  goToCart(): void {
+    this.router.navigate(['/shopping-cart']);
   }
 }

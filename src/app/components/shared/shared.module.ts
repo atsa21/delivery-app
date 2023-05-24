@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ErrorMessageComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductCardComponent,
     ReactiveFormsModule,
     FormsModule,
+    ErrorMessageComponent
   ]
 })
 export class SharedModule { }

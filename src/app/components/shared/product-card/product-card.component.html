@@ -1,6 +1,6 @@
-<div class="prod-card">
-    <div class="image-box">
-        <div class="prod-info">
+<div class="prod-card" [ngClass]="{ 'card-order' : isOrder }">
+    <div class="image-box" [ngClass]="{ 'image-order' : isOrder }">
+        <div *ngIf="product.gram" class="prod-info">
             <p>{{ product.gram }} g</p>
         </div>
         <img [src]="product.image" [alt]="product.name" class="image"/>
