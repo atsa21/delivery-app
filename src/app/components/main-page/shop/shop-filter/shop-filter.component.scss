@@ -10,8 +10,11 @@
 
     h2 {
         width: 100%;
-        padding-left: 18px;
+        padding-left: 20px;
         text-align: left;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: var(--white);
     }
 
     .shop-list {

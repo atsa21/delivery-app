@@ -2,20 +2,41 @@
     display: flex;
     width: 100%;
     height: calc(100vh - 70px);
-    background-color: var(--beige);
+    background-color: var(--light-grey);
 
     .shop-container {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
         width: calc(100% - 280px);
         padding: 32px 48px;
         overflow-y: scroll;
+
+        .shop-name {
+            font-size: 48px;
+        }
+
+        .shop-prod-box {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            .shop-category {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                                
+                .category {
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    color: var(--accent);
+                }
+
+                .product-list {
+                    display: flex;
+                    gap: 16px;
+                }
+            }
+        }
     }
-}
-
-.category {
-    font-size: 24px;
-}
-
-.product-list {
-    display: flex;
-    gap: 16px;
 }

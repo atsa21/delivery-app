@@ -6,8 +6,10 @@
     padding: 0 64px;
     gap: 12px;
     background-color: var(--accent);
+    border-bottom: 2px solid var(--white);
 
     .nav-item {
         color: var(--white);
+        text-transform: uppercase;
     }
 }

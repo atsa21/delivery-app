@@ -8,6 +8,23 @@
     <div class="prod-text">
         <h3>{{ product.name }}</h3>
         <p>{{ product.price }} ₴</p>
-        <button class="btn btn-white s-btn">Add to cart</button>
+        <div class="buttons-box">
+            <button *ngIf="!isAdded" class="btn btn-white s-btn" (click)="addItemToCart()">Add to cart</button>
+            <div *ngIf="isAdded" class="amount-box">
+                <button class="remove-button" (click)="decrementAmount()"><i class="fa-solid fa-minus"></i></button>
+                <input 
+                    type="number" 
+                    [formControl]="prodAmount" 
+                    class="amount-input" 
+                    [ngClass]="{ 'error-text' : prodAmount.invalid }" 
+                    [value]="amount" 
+                    (keyup)="setAmount($event)"
+                    (focusout)="setValidAmount()"
+                />
+                <button class="add-button" (click)="incrementAmount()"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div> 
+            </div>
+        </div>
     </div>
 </div>
