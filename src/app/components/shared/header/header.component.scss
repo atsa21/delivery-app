@@ -1,17 +1,37 @@
 .navigation {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: fixed;
     height: 70px;
     width: 100%;
     padding: 0 64px;
-    gap: 24px;
     background-color: var(--accent);
     border-bottom: 2px solid var(--white);
     z-index: 999;
 
+    .nav-box {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+    }
+
+    .logo {
+        width: 48px;
+        height: 48px;
+        cursor: default;
+    }
+
     .nav-item {
-        color: var(--white);
+        padding: 4px;
         text-transform: uppercase;
+        text-decoration: none;
+        color: var(--white);
+        border-bottom: 2px solid rgba($color: #000000, $alpha: 0);
+        
+    }
+
+    .nav-btn-selected {
+        border-bottom: 2px solid var(--white);
     }
 }

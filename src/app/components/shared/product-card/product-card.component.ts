@@ -26,9 +26,12 @@ export class ProductCardComponent implements OnInit {
   private order: any;
 
   ngOnInit(): void {
+
     this.prodAmount = new FormControl(0, [Validators.min(1), Validators.max(20)]);
     this.getOrder();
-    this.cleanSubscription = this.cleanEvent.pipe(takeUntil(this.destroy$)).subscribe(() => this.getOrder());
+    if(!this.isOrder) {
+      this.cleanSubscription = this.cleanEvent.pipe(takeUntil(this.destroy$)).subscribe(() => this.getOrder());
+    }
   }
 
   get amount() {

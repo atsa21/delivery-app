@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Navigation } from 'src/app/models/navigation.interface';
 
 @Component({
@@ -6,10 +7,19 @@ import { Navigation } from 'src/app/models/navigation.interface';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   navList: Navigation[] = [
-    { name: 'Shop', link: '' },
-    { name: 'Shopping Cart', link: '/shopping-cart' }
+    { name: 'Shop', link: '/', selected: false },
+    { name: 'Cart', link: '/shopping-cart', selected: false }
   ];
+
+  constructor(
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.navList.forEach(el => el.selected = this.router.url === el.link);
+    console.log(this.router.url);
+  }
 }
