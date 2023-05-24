@@ -1,6 +1,7 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ProductItem } from 'src/app/models/product.interface';
+import { Observable, Subscription, takeUntil, Subject } from 'rxjs'
 
 @Component({
   selector: 'app-product-card',
@@ -12,8 +13,11 @@ export class ProductCardComponent implements OnInit {
   @Input() product!: ProductItem;
   @Input() shop!: string;
   @Input() isOrder = false;
+  @Input() cleanEvent!: Observable<void>;
 
   @Output() isItemsAdded = new EventEmitter<boolean>();
+  private cleanSubscription!: Subscription;
+  private destroy$: Subject<boolean> = new Subject<boolean>();
 
   prodAddedIndex!: number;
   isAdded = false;
@@ -24,6 +28,7 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
     this.prodAmount = new FormControl(0, [Validators.min(1), Validators.max(20)]);
     this.getOrder();
+    this.cleanSubscription = this.cleanEvent.pipe(takeUntil(this.destroy$)).subscribe(() => this.getOrder());
   }
 
   get amount() {

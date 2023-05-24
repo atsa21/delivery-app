@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ShopService } from 'src/app/services/shop-service/shop.service';
-import { take } from 'rxjs';
+import { take, Subject } from 'rxjs';
 import { Product } from 'src/app/models/product.interface';
 import { Router } from '@angular/router';
 
@@ -14,6 +14,9 @@ export class ShopComponent {
   products!: Product[];
   shopName = '';
   isItemAdded = false;
+  isDataClean = false;
+
+  cleanSubject: Subject<void> = new Subject<void>()
 
   constructor( private shopService: ShopService, private router: Router) {}
 
@@ -42,5 +45,12 @@ export class ShopComponent {
 
   goToCart(): void {
     this.router.navigate(['/shopping-cart']);
+  }
+
+  cleanCart(): void {
+    localStorage.clear();
+    this.isItemAdded = false;
+    this.isDataClean = true;
+    this.cleanSubject.next();
   }
 }

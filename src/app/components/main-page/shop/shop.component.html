@@ -1,12 +1,22 @@
 <div class="container">
     <app-shop-filter (shopSelected)="getProducts($event)" [isItemAdded]="isItemAdded"></app-shop-filter>
     <div class="shop-container">
-        <h1 class="shop-name">{{ shopName }}</h1>
+        <div class="title-box">
+            <h1 class="shop-name">{{ shopName }}</h1>
+            <button *ngIf="isItemAdded" class="btn btn-s btn-delete" (click)="cleanCart()">Clean cart</button>
+        </div>
         <div class="shop-prod-box" *ngIf="products && products.length">
             <div class="shop-category" *ngFor="let product of products">
                 <h2 class="category">{{  product.category }}</h2>
                 <div class="product-list">
-                    <app-product-card *ngFor="let item of product.items" [product]="item" [shop]="shopName" (isItemsAdded)="setItemAdded($event)"></app-product-card>
+                    <app-product-card 
+                        *ngFor="let item of product.items" 
+                        [product]="item" 
+                        [shop]="shopName"
+                        [cleanEvent]="cleanSubject.asObservable()"
+                        (isItemsAdded)="setItemAdded($event)"
+                    >
+                    </app-product-card>
                 </div>
             </div>
         </div>

@@ -56,6 +56,17 @@
     }
 }
 
+.btn-delete {
+    color: var(--white);
+    background-color: var(--black);
+
+    &:hover:enabled {
+        color: var(--white);
+        background-color: var(--danger);
+        cursor: pointer;
+    }
+}
+
 .btn-accent {
     color: var(--white);
     background-color: var(--black);
