@@ -59,7 +59,8 @@ export class ShoppingCartComponent implements OnInit {
       const user: User = this.personalInfo.value;
       const orderData = {
         client: user,
-        order: this.order
+        order: this.order,
+        totalPrice: this.totalPrice
       };
       this.orderService.addOrder(orderData).pipe(take(1)).subscribe(() => {
       });
