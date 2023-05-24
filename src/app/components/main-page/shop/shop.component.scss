@@ -5,17 +5,37 @@
     background-color: var(--beige);
 
     .shop-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
         width: calc(100% - 280px);
         padding: 32px 48px;
         overflow-y: scroll;
+
+        .shop-name {
+            font-size: 48px;
+        }
+
+        .shop-prod-box {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .shop-category {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                                
+                .category {
+                    font-size: 24px;
+                    color: var(--accent);
+                }
+
+                .product-list {
+                    display: flex;
+                    gap: 16px;
+                }
+            }
+        }
     }
-}
-
-.category {
-    font-size: 24px;
-}
-
-.product-list {
-    display: flex;
-    gap: 16px;
 }

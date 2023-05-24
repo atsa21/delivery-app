@@ -11,6 +11,7 @@ import { Product } from 'src/app/models/product.interface';
 export class ShopComponent {
 
   products!: Product[];
+  shopName = '';
 
   constructor( private shopService: ShopService) {}
 
@@ -28,6 +29,7 @@ export class ShopComponent {
         });
       }
 
+      this.shopName = res.data.name;
       this.products = res.data.products;
     })
   }

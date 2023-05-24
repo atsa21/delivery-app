@@ -9,7 +9,10 @@ import { ProductItem } from 'src/app/models/product.interface';
 export class ProductCardComponent implements OnInit {
 
   @Input() product!: ProductItem;
+  @Input() shop!: string;
+
   prodAddedIndex!: number;
+  isAdded = false;
   private order: any;
 
   ngOnInit(): void {
@@ -19,6 +22,7 @@ export class ProductCardComponent implements OnInit {
   getOrder(): void {
     this.order = JSON.parse(localStorage.getItem('order') || '[]');
     this.prodAddedIndex = this.order.findIndex((el: any) => el.name === this.product.name);
+    this.isAdded = !!(this.prodAddedIndex + 1);
   }
 
   addItemToCart(): void {
@@ -34,6 +38,8 @@ export class ProductCardComponent implements OnInit {
       };
       this.order ? this.order.push(newItem) : this.order = [newItem];
     }
+    this.isAdded = true;
+    localStorage.setItem('shop', JSON.stringify(this.shop));
     localStorage.setItem('order', JSON.stringify(this.order));
   }
 }
