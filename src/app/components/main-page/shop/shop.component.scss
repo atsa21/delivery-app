@@ -54,8 +54,8 @@
     justify-content: center;
     position: fixed;
     font-size: 14px;
-    height: 80px;
-    width: 80px;
+    height: 48px;
+    width: 48px;
     border-radius: 50%;
     bottom: 32px;
     right: 32px;
@@ -82,5 +82,35 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 688px) {
+    .container {
+        flex-direction: column;
+
+        .shop-container {
+            width: 100%;
+            padding: 24px;
+    
+            .title-box .shop-name {
+                font-size: 32px;
+            }
+    
+            .shop-prod-box .shop-category .category {
+                font-size: 18px;
+            }
+        }
+
+    }
+
+    .btn-nav {
+        height: 48px;
+        width: 48px;
+
+        .cart-text {
+            width: 70px;
+            height: 70px;
+        }
     }
 }

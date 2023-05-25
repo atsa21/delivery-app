@@ -13,11 +13,12 @@
 // Scrollbar style
 
 ::-webkit-scrollbar {
+    height: 16px;
     width: 16px;
 }
    
 ::-webkit-scrollbar-track {
-    background-color: var(--light-grey);
+    background-color: transparent;
 }
    
 ::-webkit-scrollbar-thumb {
@@ -145,4 +146,11 @@ input::-webkit-inner-spin-button {
 
 .error-color {
     color: var(--danger);
+}
+
+@media only screen and (max-width: 688px) {
+    ::-webkit-scrollbar {
+        height: 10px;
+        width: 10px;
+    }
 }

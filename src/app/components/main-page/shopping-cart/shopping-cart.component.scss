@@ -19,7 +19,6 @@
         .cart-box {
             flex-basis: 35%;
             background-color: var(--med-grey);
-            overflow-y: scroll;
         }
     }
 
@@ -43,5 +42,23 @@
 
     .image {
         height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+    .container .order-details {
+        .info-box {
+            flex-basis: 100%;
+        }
+
+        .cart-box {
+            flex-basis: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .container .order-details {
+        flex-direction: column;
     }
 }
