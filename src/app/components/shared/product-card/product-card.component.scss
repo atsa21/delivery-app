@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 240px;
-    background-color: var(--accent);
+    background-color: var(--black);
 
     .image-box {
         display: flex;
@@ -20,7 +20,7 @@
             position: absolute;
             top: 0;
             width: 240px;
-            z-index: 2;
+            z-index: 3;
 
             .info-btn {
                 margin: 6px 12px;
@@ -44,6 +44,20 @@
                 color: var(--white);
                 text-align: end;
             }
+        }
+
+        .ingredience-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            gap: 6px;
+            width: 240px;
+            height: 240px;
+            color: var(--white);
+            background-color: rgba($color: #1d1d1d, $alpha: .7);
+            z-index: 2;
         }
 
         .image {
@@ -125,4 +139,8 @@
     align-items: center;
     height: 180px;
     width: 420px;
+}
+
+.card-selected {
+    background-color: var(--accent);
 }

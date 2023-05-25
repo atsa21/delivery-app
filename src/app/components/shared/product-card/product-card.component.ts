@@ -16,23 +16,20 @@ export class ProductCardComponent implements OnInit {
   @Input() cleanEvent!: Observable<void>;
 
   isInfoShowed = false;
-
-  @Output() isItemsAdded = new EventEmitter<boolean>();
-  private cleanSubscription!: Subscription;
-  private destroy$: Subject<boolean> = new Subject<boolean>();
-
   prodAddedIndex!: number;
   isAdded = false;
   prodAmount!: FormControl;
-  
+
   private order: any;
+  private destroy$: Subject<boolean> = new Subject<boolean>();
+
+  @Output() isItemsAdded = new EventEmitter<boolean>();
 
   ngOnInit(): void {
-    console.log(this.product);
     this.prodAmount = new FormControl(0, [Validators.min(1), Validators.max(20)]);
     this.getOrder();
-    if(!this.isOrder) {
-      this.cleanSubscription = this.cleanEvent.pipe(takeUntil(this.destroy$)).subscribe(() => this.getOrder());
+    if(this.cleanEvent) {
+      this.cleanEvent.pipe(takeUntil(this.destroy$)).subscribe(() => this.getOrder());
     }
   }
 
