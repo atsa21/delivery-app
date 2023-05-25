@@ -86,17 +86,22 @@
 }
 
 @media only screen and (max-width: 688px) {
-    .container .shop-container {
-        width: calc(100% - 180px);
-        padding: 16px;
+    .container {
+        flex-direction: column;
 
-        .title-box .shop-name {
-            font-size: 32px;
+        .shop-container {
+            width: 100%;
+            padding: 24px;
+    
+            .title-box .shop-name {
+                font-size: 32px;
+            }
+    
+            .shop-prod-box .shop-category .category {
+                font-size: 18px;
+            }
         }
 
-        .shop-prod-box .shop-category .category {
-            font-size: 18px;
-        }
     }
 
     .btn-nav {
@@ -107,9 +112,5 @@
             width: 70px;
             height: 70px;
         }
-    }
-
-    .btn-delete {
-        font-size: 12px;
     }
 }

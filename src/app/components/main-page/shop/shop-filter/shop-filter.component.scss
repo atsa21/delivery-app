@@ -27,6 +27,20 @@
 
 @media only screen and (max-width: 688px) {
     .container {
-        width: 180px;
+        flex-direction: row;
+        align-content: center;
+        height: 70px;
+        width: 100%;
+        padding-top: 16px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+
+        h2 {
+            width: 105px;
+        }
+
+        .shop-list {
+            flex-direction: row;
+        }
     }
 }
