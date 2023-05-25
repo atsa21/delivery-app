@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, Scroll } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { Navigation } from 'src/app/models/navigation.interface';
 
 @Component({
@@ -14,12 +15,16 @@ export class HeaderComponent implements OnInit {
     { name: 'Cart', link: '/shopping-cart', selected: false }
   ];
 
+  private destroy$: Subject<boolean> = new Subject<boolean>();
+
   constructor(
     private router: Router
   ) {}
 
   ngOnInit(): void {
     this.navList.forEach(el => el.selected = this.router.url === el.link);
-    console.log(this.router.url);
+    this.router.events.pipe(takeUntil(this.destroy$)).subscribe((link: any) => {
+      this.navList.forEach(el => el.selected = link.routerEvent.url === el.link);
+    })
   }
 }
