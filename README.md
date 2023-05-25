@@ -7,7 +7,8 @@ Delivery is an full stack app. The platform is built on **Angular 15.2.1** for t
 1. Clone the repository from [GitHub](https://github.com/atsa21/delivery-app).
 2. Install the required dependencies using `npm install`.
 3. Start the backend server using `npm run start-server`.
-4. Navigate to http://localhost:3000/ in your web browser to use the application.
+3. Start the frontent server using `ng serve`.
+4. Navigate to http://localhost:4200/ in your web browser to use the application.
 
 ## Check version
 Run `ng version` and `npm -v` to see your versions of Angular and Node. 
