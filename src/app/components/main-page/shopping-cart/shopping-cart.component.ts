@@ -60,6 +60,7 @@ export class ShoppingCartComponent implements OnInit {
 
   addOrder(): void {
     if(this.isFormValid) {
+      const orderDate = String(new Date());
       const user: User = {
         name: this.getControlValue('name'),
         email: this.getControlValue('email'),
@@ -70,6 +71,7 @@ export class ShoppingCartComponent implements OnInit {
         client: user,
         order: this.order,
         comment: this.getControlValue('comment'),
+        date: orderDate,
         totalPrice: this.totalPrice
       };
       this.orderService.addOrder(orderData).pipe(take(1)).subscribe(() => {
