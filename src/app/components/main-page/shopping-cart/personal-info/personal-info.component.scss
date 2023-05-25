@@ -1,14 +1,31 @@
 .personal-info {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    width: 100%;
+    gap: 24px;
     padding: 24px 64px;
 
     .form {
         display: flex;
-        flex-direction: column;
-        gap: 12px;
-        width: 50%;
+        gap: 24px;
+        width: 100%;
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 50%;
+
+            .input-box {
+                width: 100%;
+
+                .text-area {
+                    height: 110px;
+                    resize: none;
+                    padding: 12px;
+                }
+            }
+        }
     }
 }
 

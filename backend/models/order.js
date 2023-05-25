@@ -17,6 +17,8 @@ const clientSchema = mongoose.Schema({
 const orderSchema = mongoose.Schema({
     client: clientSchema,
     order: [itemsSchema],
+    comment: { type: String },
+    date: { type: String, required: true },
     totalPrice: { type: Number, required: true }
 });
 

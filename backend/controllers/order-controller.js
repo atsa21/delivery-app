@@ -5,6 +5,8 @@ exports.addOrder = (req, res) => {
     const order = new Order({
         client: req.body.client,
         order: req.body.order,
+        comment: req.body.comment,
+        date: req.body.date,
         totalPrice: req.body.totalPrice
     });
 
