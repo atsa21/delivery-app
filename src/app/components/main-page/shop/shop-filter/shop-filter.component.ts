@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ShopService } from 'src/app/services/shop-service/shop.service';
 import { take } from 'rxjs';
 import { Shop } from 'src/app/models/shop.interface';
@@ -10,6 +10,7 @@ import { Shop } from 'src/app/models/shop.interface';
 })
 export class ShopFilterComponent implements OnInit {
 
+  @Input() isItemAdded = false;
   shops!: Shop[];
 
   @Output() shopSelected = new EventEmitter<string>();

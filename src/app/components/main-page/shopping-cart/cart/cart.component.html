@@ -1,0 +1,4 @@
+<div class="order-cart">
+    <h1>Cart</h1>
+    <app-product-card *ngFor="let item of order" [product]="item" [shop]="shop" [isOrder]="true" (isItemsAdded)="setChangedOrder()"></app-product-card>
+</div>

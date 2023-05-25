@@ -1,7 +1,11 @@
-<div class="prod-card">
-    <div class="image-box">
-        <div class="prod-info">
+<div class="prod-card" [ngClass]="{ 'card-order' : isOrder, 'card-selected' : amount }">
+    <div class="image-box" [ngClass]="{ 'image-order' : isOrder }">
+        <div *ngIf="product.gram && product.ingredience" class="prod-info">
+            <button class="info-btn" (click)="isInfoShowed = !isInfoShowed">info</button>
             <p>{{ product.gram }} g</p>
+        </div>
+        <div *ngIf="product.ingredience && isInfoShowed" class="ingredience-box">
+            <p *ngFor="let ingr of product.ingredience">{{ingr}}</p>
         </div>
         <img [src]="product.image" [alt]="product.name" class="image"/>
     </div>

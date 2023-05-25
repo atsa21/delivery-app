@@ -1,16 +1,13 @@
 :root {
     --black: rgb(31, 31, 31);
-    --dark-grey: rgb(58, 58, 58);
     --grey: #979797;
     --ternary-grey: #c9c9c9;
     --med-grey: #e2e2e2;
     --light-grey: #EEEEEE;
     --white: rgb(255, 255, 255);
-    --beige: #F2E6D8;
     --accent: #7B2D2D;
     --secondary: #D99C52;
     --danger: #ff3535;
-    --success: #35BF30;
 }
 
 // Scrollbar style
@@ -40,7 +37,6 @@
     text-transform: uppercase;
     border: 0;
     transition: all .4s ease-in-out;
-    cursor: pointer;
 }
 
 .btn-s {
@@ -56,6 +52,18 @@
     &:hover:enabled {
         color: var(--white);
         background-color: var(--black);
+        cursor: pointer;
+    }
+}
+
+.btn-delete {
+    color: var(--white);
+    background-color: var(--black);
+
+    &:hover:enabled {
+        color: var(--white);
+        background-color: var(--danger);
+        cursor: pointer;
     }
 }
 
@@ -64,31 +72,30 @@
     background-color: var(--black);
 
     &:hover:enabled {
-        background-color: var(--dark-grey);
+        background-color: var(--secondary);
+        cursor: pointer;
     }
 
     &:disabled {
-        color: var(--white);
+        color: var(--grey);
         background-color: var(--med-grey);
     }
 }
 
 // Inputs style
 
-.input {
-    height: 44px;
-    padding: 16px;
-    border-radius: 6px;
-    outline: none;
-    border: 0;
+.input-box {
+    display: flex;
+    flex-direction: column;
+    color: var(--black);
+    font-size: 14px;
 }
 
-.input-accent-lined {
-    display: flex;
-    align-items: center;
-    color: var(--black);
+.small-input {
+    height: 44px;
+    padding: 0 16px;
+    outline: 0;
     border: 2px solid var(--grey);
-    font-size: 14px;
 
     &::placeholder {
         color: var(--ternary-grey);
@@ -103,8 +110,39 @@
     }
 }
 
+.label {
+    font-size: 18px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+// Errors style
+
+.input-invalid {
+    border: 2px solid var(--danger);
+}
+
+.error-box {
+    height: 14px;
+    width: 100%;
+
+    app-error-message {
+        display: flex;
+        height: 14px;
+        width: 100%;
+    }
+}
+
+.red-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--danger);
+}
+
+.error-color {
+    color: var(--danger);
 }

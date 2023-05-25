@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ProductItem } from 'src/app/models/product.interface';
+import { Observable, Subscription, takeUntil, Subject } from 'rxjs'
 
 @Component({
   selector: 'app-product-card',
@@ -11,16 +12,25 @@ export class ProductCardComponent implements OnInit {
 
   @Input() product!: ProductItem;
   @Input() shop!: string;
+  @Input() isOrder = false;
+  @Input() cleanEvent!: Observable<void>;
 
+  isInfoShowed = false;
   prodAddedIndex!: number;
   isAdded = false;
   prodAmount!: FormControl;
-  
+
   private order: any;
+  private destroy$: Subject<boolean> = new Subject<boolean>();
+
+  @Output() isItemsAdded = new EventEmitter<boolean>();
 
   ngOnInit(): void {
     this.prodAmount = new FormControl(0, [Validators.min(1), Validators.max(20)]);
     this.getOrder();
+    if(this.cleanEvent) {
+      this.cleanEvent.pipe(takeUntil(this.destroy$)).subscribe(() => this.getOrder());
+    }
   }
 
   get amount() {
@@ -29,6 +39,12 @@ export class ProductCardComponent implements OnInit {
 
   private getOrder(): void {
     this.order = JSON.parse(localStorage.getItem('order') || '[]');
+    if(!this.order.length) {
+      localStorage.removeItem('shop');
+      this.isItemsAdded.emit(false);
+    } else {
+      this.isItemsAdded.emit(true);
+    }
     this.prodAddedIndex = this.order.findIndex((el: any) => el.name === this.product.name);
     this.isAdded = !!(this.prodAddedIndex + 1);
     if(this.isAdded) {
@@ -39,7 +55,8 @@ export class ProductCardComponent implements OnInit {
   addItemToCart(): void {
     this.getOrder();
     const newItem = {
-      name: this.product.name, 
+      name: this.product.name,
+      image: this.product.image,
       price: this.product.price, 
       amount: 1
     };
@@ -48,6 +65,7 @@ export class ProductCardComponent implements OnInit {
     localStorage.setItem('shop', JSON.stringify(this.shop));
     localStorage.setItem('order', JSON.stringify(this.order));
     this.prodAmount.setValue(1);
+    this.isItemsAdded.emit(true);
   }
 
   setAmount(event: KeyboardEvent): void {

@@ -1,5 +1,7 @@
-<nav class="navigation">
-    <a class="nav-item" *ngFor="let nav of navList" [href]="nav.link">
-        {{ nav.name }}
-    </a>
-</nav>
+<div class="navigation">
+    <nav class="nav-box">
+        <a class="nav-item" [ngClass]="{'nav-btn-selected' : navList[0].selected}" [href]="navList[0].link">{{ navList[0].name }}</a>
+        <img src="/assets/img/logo.svg" alt="logo" class="logo"/>
+        <a class="nav-item" [ngClass]="{'nav-btn-selected' : navList[1].selected}" [href]="navList[1].link">{{ navList[1].name }}</a>
+    </nav>
+</div>
