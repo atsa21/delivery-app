@@ -3,4 +3,18 @@
     flex-direction: column;
     gap: 12px;
     padding: 24px;
+
+    .cards-box {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .order-cart .cards-box {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 }

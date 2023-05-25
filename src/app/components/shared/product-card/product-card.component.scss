@@ -144,3 +144,44 @@
 .card-selected {
     background-color: var(--accent);
 }
+
+@media only screen and (max-width: 1440px) {
+    .prod-card {
+        width: 200px;
+
+        .image-box {
+            height: 200px;
+            width: 200px;
+
+            .image {
+                height: 160px;
+                width: 160px;
+            }
+
+            .ingredience-box {
+                height: 200px;
+                width: 200px;
+            }
+
+            .prod-info {
+                width: 200px;
+            }
+        }
+
+        .image-order {
+            min-width: 160px;
+            width: 160px;
+            height: 160px;
+    
+            .image {
+                width: 130px;
+                height: 130px;
+            }
+        }
+    }
+
+    .card-order {
+        height: 160px;
+        width: 360px;
+    }
+}

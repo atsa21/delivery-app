@@ -32,3 +32,17 @@
 .error-box {
     height: 14px;
 }
+
+@media only screen and (max-width: 688px) {
+    .personal-info {
+        padding: 24px;
+
+        .form {
+            flex-direction: column;
+    
+            .column {
+                width: 100%;
+            }
+        }
+    } 
+}
