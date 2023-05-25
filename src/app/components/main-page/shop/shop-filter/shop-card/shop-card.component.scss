@@ -41,3 +41,22 @@
 .selected-box {
     height: 109px;
 }
+
+@media only screen and (max-width: 688px) {
+    .shop-item {
+        height: 50px;
+        width: 140px;
+
+        .name {
+            font-size: 18px;
+        }
+
+        .image {
+            width: 140px;
+        }
+    }
+
+    .selected-box {
+        height: 70px;
+    }
+}

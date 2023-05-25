@@ -7,6 +7,7 @@
     gap: 12px;
     padding-top: 24px;
     background-color: var(--secondary);
+    overflow-y: scroll;
 
     h2 {
         width: 100%;
@@ -21,5 +22,11 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
+    }
+}
+
+@media only screen and (max-width: 688px) {
+    .container {
+        width: 180px;
     }
 }
