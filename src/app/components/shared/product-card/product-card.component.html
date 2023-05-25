@@ -2,7 +2,7 @@
     <div class="image-box" [ngClass]="{ 'image-order' : isOrder }">
         <div *ngIf="product.gram && product.ingredience" class="prod-info">
             <button class="info-btn" (click)="isInfoShowed = !isInfoShowed">info</button>
-            <p>{{ product.gram }} g</p>
+            <p>{{ product.gram }}</p>
         </div>
         <div *ngIf="product.ingredience && isInfoShowed" class="ingredience-box">
             <p *ngFor="let ingr of product.ingredience">{{ingr}}</p>

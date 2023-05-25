@@ -4,7 +4,7 @@ const itemsSchema = mongoose.Schema({
     name: { type: String, required: true },
     image: { type: String, required: true },
     price: { type: Number, required: true },
-    gram: { type: Number, required: true },
+    gram: { type: String, required: true },
     ingredience: [{ type: String, required: true }],
 });
 

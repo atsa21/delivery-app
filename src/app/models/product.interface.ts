@@ -10,6 +10,6 @@ export interface ProductItem {
     image: string,
     price: number,
     amount?: number;
-    gram?: number,
+    gram?: string,
     ingredience?: string[]
 }
