@@ -4,6 +4,7 @@ exports.addOrder = (req, res) => {
 
     const order = new Order({
         client: req.body.client,
+        shop: req.body.shop,
         order: req.body.order,
         comment: req.body.comment,
         date: req.body.date,

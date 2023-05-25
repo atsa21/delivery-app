@@ -69,6 +69,7 @@ export class ShoppingCartComponent implements OnInit {
       };
       const orderData = {
         client: user,
+        shop: this.shop,
         order: this.order,
         comment: this.getControlValue('comment'),
         date: orderDate,
