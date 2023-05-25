@@ -25,6 +25,10 @@ export class ShoppingCartComponent implements OnInit {
     this.getOrder();
   }
 
+  getControlValue(controlName: string) {
+    return this.personalInfo.get(controlName).value;
+  }
+
   getOrder(): void {
     this.order = JSON.parse(localStorage.getItem('order') || '[]');
     this.shop = localStorage.getItem('shop') as string;
@@ -56,10 +60,16 @@ export class ShoppingCartComponent implements OnInit {
 
   addOrder(): void {
     if(this.isFormValid) {
-      const user: User = this.personalInfo.value;
+      const user: User = {
+        name: this.getControlValue('name'),
+        email: this.getControlValue('email'),
+        phone: this.getControlValue('phone'),
+        address: this.getControlValue('address') 
+      };
       const orderData = {
         client: user,
         order: this.order,
+        comment: this.getControlValue('comment'),
         totalPrice: this.totalPrice
       };
       this.orderService.addOrder(orderData).pipe(take(1)).subscribe(() => {

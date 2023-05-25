@@ -13,6 +13,8 @@ import { ShopCardComponent } from './components/main-page/shop/shop-filter/shop-
 import { PersonalInfoComponent } from './components/main-page/shopping-cart/personal-info/personal-info.component';
 import { CartComponent } from './components/main-page/shopping-cart/cart/cart.component';
 import { IMaskModule } from 'angular-imask';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { IMaskModule } from 'angular-imask';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    IMaskModule
+    IMaskModule,
+    GoogleMapsModule,
+    GooglePlaceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

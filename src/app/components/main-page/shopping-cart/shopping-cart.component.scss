@@ -4,20 +4,20 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
     background-color: var(--light-grey);
 
     .order-details {
         display: flex;
         width: 100%;
-        height: calc(100vh - 190px);
+        min-height: calc(100vh - 190px);
 
         .info-box {
-            flex-basis: 60%;
+            flex-basis: 65%;
         }
     
         .cart-box {
-            flex-basis: 40%;
+            flex-basis: 35%;
             background-color: var(--med-grey);
             overflow-y: scroll;
         }
