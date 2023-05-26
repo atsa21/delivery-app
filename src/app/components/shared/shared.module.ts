@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorMessageComponent } from './error-message/error-message.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NotificationDialogComponent } from './notification-dialog/notification-dialog.component';
 
 
 
@@ -11,19 +13,23 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
   declarations: [
     HeaderComponent,
     ProductCardComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    NotificationDialogComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    MatDialogModule
   ],
   exports: [
     HeaderComponent,
     ProductCardComponent,
     ReactiveFormsModule,
     FormsModule,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    MatDialogModule,
+    NotificationDialogComponent
   ]
 })
 export class SharedModule { }
