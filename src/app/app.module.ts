@@ -15,6 +15,7 @@ import { CartComponent } from './components/main-page/shopping-cart/cart/cart.co
 import { IMaskModule } from 'angular-imask';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
     SharedModule,
     IMaskModule,
     GoogleMapsModule,
-    GooglePlaceModule
+    GooglePlaceModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

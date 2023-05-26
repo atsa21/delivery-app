@@ -4,6 +4,8 @@ import { ProductItem } from 'src/app/models/product.interface';
 import { User } from 'src/app/models/user.interface';
 import { OrderService } from 'src/app/services/order-servise/order.service';
 import { take } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationDialogComponent } from '../../shared/notification-dialog/notification-dialog.component';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -19,7 +21,11 @@ export class ShoppingCartComponent implements OnInit {
 
   isFormValid = false;
 
-  constructor( private router: Router, private orderService: OrderService) {}
+  constructor( 
+    private router: Router, 
+    private orderService: OrderService,
+    public dialog: MatDialog
+    ) {}
 
   ngOnInit(): void {
     this.getOrder();
@@ -76,8 +82,15 @@ export class ShoppingCartComponent implements OnInit {
         totalPrice: this.totalPrice
       };
       this.orderService.addOrder(orderData).pipe(take(1)).subscribe(() => {
-        localStorage.clear();
-        this.goToShop();
+        const dialogRef = this.dialog.open(NotificationDialogComponent, {
+          data: {
+            shopName: this.shop
+          }
+        });
+        dialogRef.afterClosed().pipe(take(1)).subscribe(() => {
+          localStorage.clear();
+          this.goToShop();
+        })
       });
     }
   }
