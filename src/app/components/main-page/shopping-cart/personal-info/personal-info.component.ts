@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
 import { Options } from 'ngx-google-places-autocomplete/objects/options/options';
