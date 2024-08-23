@@ -2,6 +2,10 @@
 
 Delivery is an full stack app. First go to https://glitch.com/edit/#!/delivery-angular-app and wait for deploy. Link to hosted application - [Delivery App](https://delivery-angular-app.glitch.me/) . The platform is built on **Angular 15.2.1** for the frontend and **NodeJS 16.13.0** for the backend.
 
+## Site
+
+![image](https://github.com/user-attachments/assets/ab57adfa-6c04-4b18-a109-211a5a81ca32)
+
 ## Installation
 
 1. Clone the repository from [GitHub](https://github.com/atsa21/delivery-app).
