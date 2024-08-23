@@ -1,4 +1,4 @@
 export const environment = {
-    production: true,
-    apiUrl: "https://delivery-angular-app.glitch.me/api"
+    production: false,
+    apiUrl: "http://localhost:3000/api"
 };
